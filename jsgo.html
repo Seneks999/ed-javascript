@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/jsgo.css" />
+
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <section>
+      <nav class="nav">
+        <h1>JavaScript 3.0</h1>
+        <ol>
+          <li>
+            <a href="#module-one"
+              >Модуль 1. Змінні та типи. Основи функцій. Module 1: Variables and
+              types. The basics of functions.</a
+            >
+          </li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 id="module-one">
+          Модуль 1. Змінні та типи. Основи функцій. Module 1: Variables and
+          types. The basics of functions.
+        </h2>
+        <h3>Оператори порівняння. Comparison operators.</h3>
+        <h4>Арифметичні функції. Arithmetic functions.</h4>
+
+        <p>
+          Клас Math надає методи для виконання математичних операцій та роботи з
+          числами.
+        </p>
+        <p>Клас Math є вбудованим класом JavaScript.</p>
+        <p>Кілька методів, які надає клас Math:</p>
+
+        <ul>
+          <li>
+            <mark>Math.floor(num):</mark> повертає найближче ціле число, яке є
+            меншим або дорівнює вказаному числу <mark>num</mark>.
+            <code>
+              <pre>
+    console.log(Math.floor(1.3)); // 1
+    console.log(Math.floor(1.7)); // 1
+              </pre>
+            </code>
+          </li>
+
+          <li>
+            <mark>Math.ceil(num):</mark> повертає найближче ціле число, яке є
+            більшим, або дорівнює зазначеному числу <mark>num</mark>.
+            <p>
+              <code>
+                <pre>
+    console.log(Math.ceil(1.3)); // 2
+    console.log(Math.ceil(1.7)); // 2
+                  </pre
+                >
+              </code>
+            </p>
+          </li>
+
+          <li>
+            <mark>Math.round(num):</mark> повертає значення числа після
+            округлення за математичними правилами - якщо десяткова частина числа
+            менша 0.5, то округлення буде в меншу сторону, якщо 0.5 і більше —
+            то в більшу.<mark>num</mark>.
+            <p>
+              <code>
+                <pre>
+    console.log(Math.round(1.3)); // 1
+    console.log(Math.round(1.7)); // 2
+                  </pre
+                >
+              </code>
+            </p>
+          </li>
+
+          <li>
+            <mark>Math.max(num1, num2, ...):</mark> повертає найбільше число з
+            набору переданих чисел.
+            <p>
+              <code>
+                <pre>
+    console.log(Math.max(20, 10, 50, 40)); // 50
+                </pre>
+              </code>
+            </p>
+          </li>
+
+          <li>
+            <mark>Math.min(num1, num2, ...):</mark> повертає найменше число з
+            набору переданих чисел.
+            <p>
+              <code>
+                <pre>
+    console.log(Math.min(20, 10, 50, 40)); // 10
+                </pre>
+              </code>
+            </p>
+          </li>
+
+          <li>
+            <mark>Math.random():</mark> повертає випадкове число в діапазоні від
+            0 (включно) до 1 (за винятком).
+            <p>
+              <code>
+                <pre>
+    console.log(Math.random()); // випадкове число між 0 і 1, наприклад 0.2 ... 0.9166353649342294
+                </pre>
+              </code>
+            </p>
+          </li>
+
+          <p>
+            Math, також надає методи для тригонометричних функцій, логарифмів та
+            інших математичних операцій.
+          </p>
+        </ul>
+
+        <h4>Дробове число. Fractional number.</h4>
+        <p>0.1 + 0.2 не дорівнює 0.3.</p>
+        <p>
+          Число 0.1 у двійковій системі числення, яку використовує комп'ютер —
+          це нескінченний дріб.
+        </p>
+        <p>
+          Двійкове значення нескінченних дробів зберігається лише до певного
+          знака.
+        </p>
+        <p>
+          <code>
+            <pre>
+    console.log(0.1 + 0.2 === 0.3); // false
+    console.log(0.1 + 0.2); // 0.30000000000000004
+                  </pre
+            >
+          </code>
+        </p>
+        <p>
+          Щоб при додаванні двох дробових чисел, наприклад 0.1 + 0.2 виходило
+          0.3, можна використати два підходи.
+        </p>
+        <ul>
+          <li>
+            1. Помножити числа на досить велике число (наприклад, 10 або 100),
+            виконати додавання, зозділити результат на те саме число, щоб
+            повернути його до початкового масштабу.
+            <code>
+              <pre>
+    console.log(0.1 * 10 + 0.2 * 10); // 3
+    console.log((0.1 * 10 + 0.2 * 10) / 10); // 0.3
+                  </pre
+              >
+            </code>
+          </li>
+          <li>
+            2. Метод <code><mark>toFixed()</mark></code> для округлення
+            результату до певної кількості знаків після крапки.
+            <code>
+              <pre>
+    console.log((0.1 + 0.2).toFixed(1)); // "0.3"
+    console.log((5).toFixed(2));  //  ”5.00”
+    console.log((8.762195).toFixed(4));  //  “8.7622”
+                  </pre
+              >
+            </code>
+          </li>
+        </ul>
+
+        <h3>Основи функцій. The basics of functions.</h3>
+        <h4>Оголошення та виклик функції. Declaring and calling functions.</h4>
+        <p>Cтруктура оголошення функції</p>
+        <ol>
+          <li>Ключове слово function</li>
+          <li>
+            Ім'я функції — дієслово, що відповідає на питання "Що зробити?"
+          </li>
+          <li>Пара круглих дужок ()</li>
+          <li>Тіло функції у фігурних дужках {}</li>
+
+          <code>
+            <pre>
+    function doStuff() {
+  // Тіло функції
+  console.log('Log inside multiply function');
+}
+                  </pre
+            >
+          </code>
+        </ol>
+        <p>
+          Тіло функції містить інструкції, які потрібно виконати. Ці інструкції
+          можуть включати оператори, умовні конструкції, цикли та інші функції.
+        </p>
+        <p>
+          Коли функцію потрібно виконати, вона викликається за допомогою її
+          імені та пари круглих дужок.
+        </p>
+        <code>
+          <pre>
+    // Оголошення функції multiply
+function doStuff() {
+  // Тіло функції
+  console.log('Log inside multiply function');
+}
+
+// Виклики функції multiply
+doStuff(); // 'Log inside multiply function'
+doStuff(); // 'Log inside multiply function'
+doStuff(); // 'Log inside multiply function'
+                  </pre
+          >
+        </code>
+        <h4>Параметри та аргументи. Parameters and arguments.</h4>
+        <dfn>Параметри</dfn> — це локальні змінні, доступні лише всередині тіла
+        функції.
+        <p>
+          Функція може мати будь-яку кількість параметрів або не мати їх
+          взагалі, у такому випадку вказуються порожні круглі дужки.
+        </p>
+
+        <code>
+          <pre>
+        // Оголошення параметрів x, y, z
+function multiply(x, y, z) {
+  console.log(`Result: ${x * y * z}`);
+}
+        </pre
+          >
+        </code>
+
+        <p>
+          Під час виклику функції в круглих дужках можна передати аргументи, які
+          є значеннями для оголошених параметрів функції.
+        </p>
+
+        <code>
+          <pre>
+    // Оголошення параметрів x, y, z
+function multiply(x, y, z) {
+  console.log(`Result: ${x * y * z}`);
+}
+
+// Передача аргументів
+multiply(2, 3, 5); // "Result: 30"
+multiply(4, 8, 12); // "Result: 384"
+multiply(17, 6, 25); // "Result: 2550"
+                  </pre
+          >
+        </code>
+        <h4>Повернення значення. Return value.</h4>
+        <p>
+          Оператор return використовується для повернення значення з тіла
+          функції назад у код, у місце її виклику. Коли інтерпретатор зустрічає
+          оператор return, він виходить із функції (припиняє її виконання) і
+          повертає вказане після return значення в місце виклику функції.
+        </p>
+
+        <code>
+          <pre>
+    function multiply(x, y, z) {
+	const product = x * y * z;
+  // Повертаємо результат виразу множення
+  return product;
+}
+
+// Результат роботи функції можна зберегти у змінну
+const result = multiply(2, 3, 5);
+console.log(result); // 30
+                  </pre
+          >
+        </code>
+        <p>
+          Щоб уникнути оголошення зайвої змінної в тілі функції, можна відразу ж
+          повертати результат виразу без створення окремої змінної для
+          зберігання результату виразу.
+        </p>
+
+        <code>
+          <pre>
+    function multiply(x, y, z) {
+  return x * y * z;
+}
+
+const result = multiply(2, 3, 5);
+console.log(result); // 30
+                  </pre
+          >
+        </code>
+        <p>
+          Якщо в тілі функції відсутній оператор return або він не вказує на
+          конкретне значення, функція поверне спеціальне значення undefined.
+        </p>
+
+        <code>
+          <pre>
+    function multiply(x, y, z) {
+	const product = x * y * z;
+}
+
+const result = multiply(2, 3, 5);
+console.log(result); // undefined
+                  </pre
+          >
+        </code>
+
+        <p>
+          Всі інструкції які йдуть після оператора return в тілі функції не
+          виконуються.
+        </p>
+
+        <code>
+          <pre>
+    function multiply(x, y, z) {
+  console.log('The code before return is executed as usual');
+
+  return x * y * z;
+
+  console.log('This code is never executed because it is after return');
+}
+
+console.log(multiply(2, 3, 5)); // 30
+                  </pre
+          >
+        </code>
+      </div>
+    </section>
+    <script src="js/code.js"></script>
+  </body>
+</html>
