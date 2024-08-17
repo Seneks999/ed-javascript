@@ -27,6 +27,14 @@ dfn {
   font-weight: bold;
 }
 
+h3 {
+  color: #3457d5;
+}
+
+h4 {
+  color: darkmagenta;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
