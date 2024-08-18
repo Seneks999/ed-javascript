@@ -381,9 +381,646 @@ const totalPrice = pricePerItem * orderedQuantity;</pre
           виходячи з її попереднього значення.
         </p>
 
+        <ul>
+          <li>
+            <dfn>Додавання:</dfn> <code>+=</code>. Приклад:
+            <code>x += y</code> еквівалентно <code>x = x + y</code>
+          </li>
+          <li>
+            <dfn>Віднімання:</dfn> <code>-=</code>. Приклад:
+            <code>x -= y</code> еквівалентно <code>x = x - y</code>
+          </li>
+          <li>
+            <dfn>Множення:</dfn> <code>*=</code>. Приклад:
+            <code>x *= y</code> еквівалентно <code>x = x * y</code>
+          </li>
+          <li>
+            <dfn>Ділення:</dfn> <code>/=</code>. Приклад:
+            <code>x /= y</code> еквівалентно <code>x = x / y</code>
+          </li>
+          <li>
+            <dfn>Остача від ділення:</dfn> <code>%=</code>. Приклад:
+            <code>x %= y</code> еквівалентно <code> x = x % y</code>
+          </li>
+        </ul>
+
+        <p id="age"></p>
+
+        <h3>
+          Конкатенація (склеювання) рядків. Concatenation (gluing) of strings.
+        </h3>
+        <p>
+          Якщо застосувати оператор + до рядка та будь-якого іншого типу даних,
+          результатом буде новий рядок, що містить об'єднання вихідних значень.
+          Це називається <dfn>конкатенація (склеювання)</dfn>. Під час
+          конкатенації будь-який тип даних буде приведено до рядка та поєднано з
+          іншим рядком.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const message = "Mango " + "is" + " happy";
+console.log(message); // "Mango is happy"</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const age = 24;
+const message = "Poly is " + age + " years old!";</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log("Mango" + 55); // "Mango55"
+console.log("Mango" + true); // "Mangotrue"</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Проте порядок операндів має значення. Перетворення типів відбувається
+          лише в момент операції додавання з рядком. До цього моменту
+          застосовуються нормальні правила математики.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log(1 + "2"); // "12"
+console.log(1 + "2" + 4); // "124"
+console.log(1 + 2 + "4"); // "34"</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const username = "Poly";
+const message = "Welcome " + username + "!";
+console.log(message);</pre
+            >
+          </code>
+        </p>
+
+        <h3>Перетворення типів: рядки. Converting types: strings.</h3>
+        <p>
+          Перетворення типів у JavaScript — це процес зміни значення одного типу
+          даних на інший тип даних. У JavaScript існують два типи перетворення:
+          явне та неявне.
+        </p>
+
+        <h4>Явне перетворення типів</h4>
+        <p>
+          Для перетворення будь-якого значення на рядок можна використовувати
+          вбудовану функцію <code>String()</code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log(String(5)); // "5"
+console.log(String(true)); // "true"
+console.log(String(false)); // "false"
+console.log(String(null)); // "null"
+console.log(String(undefined)); // "undefined"</pre
+            >
+          </code>
+        </p>
+        <p>
+          Наприклад, якщо виконується операція додавання (<code>+</code>) між
+          рядком та іншим типом даних, JavaScript автоматично перетворює
+          значення операнда на рядок і виконує конкатенацію рядків.
+        </p>
+
+        <h4>Неявне перетворення типів</h4>
+
+        <p>
+          <code>
+            <pre>
+console.log("5" + 3); // "53"
+console.log("5" + true); // "5true"
+console.log("5" + false); // "5false"
+console.log("5" + null); // "5null"
+console.log("5" + undefined); // "5undefined"</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          <dfn>Шаблонні рядки</dfn> — це синтаксис, який полегшує об'єднання
+          статичного тексту з динамічним (тобто текстом, що містить змінні,
+          обчислення тощо).
+        </p>
+
+        <p>
+          Код не працюватиме, якщо огорнути шаблонні рядки звичайними одинарними
+          або подвійними лапками.
+        </p>
+
+        <p>
+          Шаблонні рядки дозволяють підставляти значення змінних безпосередньо
+          всередині рядка за допомогою синтаксису інтерполяції
+          <code>${змінна}</code>.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const guestName = "Mango";
+const roomNumber = 207;
+const greeting = `Welcome ${guestName}, your room number is ${roomNumber}!`;
+console.log(greeting); // "Welcome Mango, your room number is 207!"</pre
+            >
+          </code>
+        </p>
+
+        <h4>Порівняння конкатенації та шаблонних рядків</h4>
+
+        <p>Код з конкатенацією.</p>
+        <p>
+          <code>
+            <pre>
+const guestName = "Mango";
+const roomNumber = 207;
+const greeting =
+  "Welcome " + guestName + ", your room number is " + roomNumber + "!";
+console.log(greeting); // "Welcome Mango, your room number is 207!"</pre
+            >
+          </code>
+        </p>
+
+        <p>Код, де значення змінних підставляються у шаблонний рядок.</p>
+        <p>
+          <code>
+            <pre>
+const guestName = "Mango";
+const roomNumber = 207;
+const greeting = `Welcome ${guestName}, your room number is ${roomNumber}!`;
+console.log(greeting); // "Welcome Mango, your room number is 207!"</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const productName = "Droid";
+const pricePerItem = 3500;
+
+// Change code below this line
+const message = `You picked ${productName}, price per item is ${pricePerItem} credits`;</pre
+            >
+          </code>
+        </p>
+
+        <h4>Замовлення продукту</h4>
+
+        <p>
+          <code>
+            <pre>
+const pricePerDroid = 800;
+const orderedQuantity = 6;
+const deliveryFee = 50;
+const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+const message = `You ordered droids worth ${totalPrice} credits`;
+console.log(message);</pre
+            >
+          </code>
+        </p>
+
+        <h3>Довжина рядка. Length of the string.</h3>
+        <p><dfn>Властивості</dfn> — це описові характеристики сутності.</p>
+        <p>
+          Для доступу до властивості (<mark>property</mark>) сутності
+          (<mark>objectName</mark>) використовується синтаксис із крапкою:
+        </p>
+
+        <p><code>сутність.властивість</code></p>
+
+        <p>
+          Наприклад, щоб отримати довжину рядка, ми можемо використовувати
+          властивість <code>length</code> таким чином:
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const productName = "Repair droid";
+
+// Якщо у змінній зберігається рядок
+console.log(productName.length); // 12
+
+// Якщо рядковий літерал
+console.log("Repair droid".length); // 12</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const username = "Poly";
+const message = `Username ${username} is ${username.length} characters long`;
+console.log(message);
+
+Username Poly is 4 characters long
+</pre
+            >
+          </code>
+        </p>
+
+        <h4>Індексація рядків. String indexing.</h4>
+        <p>
+          <dfn>Рядки</dfn> — це набори символів, де кожен символ має свій
+          порядковий номер (індекс). Індексація елементів рядка починається з
+          нуля.
+        </p>
+
+        <p>
+          Для доступу до певного символу рядка ми використовуємо синтаксис
+          квадратних дужок, де вказуємо індекс потрібного символу:
+          <code>string[index]</code>.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const product = "Repair droid";
+console.log(product[0]); // 'R'
+console.log(product[5]); // 'r'
+console.log(product[11]); // 'd'
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Отримання останнього символу рядка можливе за його індексом
+          <code>string[lastIndex]</code>. Щоб знайти індекс останнього символу
+          рядка, треба від довжини цього рядка відняти одиницю
+          <code>string.length - 1</code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const product = "Repair droid";
+const lastElementIndex = product.length - 1;
+console.log(product[lastElementIndex]); // 'd'
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Для доступу до останнього символу рядка без створення проміжної
+          змінної ми можемо вставити вираз (<code>product.length - 1</code>) у
+          квадратні дужки при зверненні до елемента.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const product = "Repair droid";
+console.log(product[product.length - 1]); // 'd'
+</pre
+            >
+          </code>
+        </p>
+
+        <p>Додай код, який записує у змінні наступні значення:</p>
+
+        <p><code>courseTopicLength</code> - довжина рядка</p>
+        <p><code>firstElement</code> - перший символ рядка</p>
+        <p>
+          <code>lastElement</code> - останній символ рядка (використовуй змінну
+          courseTopicLength)
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const courseTopic = "JavaScript essentials";
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopicLength - 1]; 
+
+</pre
+            >
+          </code>
+        </p>
+
+        <h3>Незмінність рядків. String immutability.</h3>
+
+        <p>
+          Коли рядок створюється, він стає незмінним (не можна замінити окремі
+          символи всередині рядка).
+        </p>
+
+        <p>
+          <code>
+            <pre>
+let product = "Droid";
+console.log(product); // "Droid"
+
+// Це не має жодного ефекту
+product[2] = "O";
+console.log(product); // "Droid" 
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Натомість ми повинні створити новий рядок і присвоїти його змінній
+          новий рядок замість старого .
+        </p>
+
+        <p>
+          <code>
+            <pre>
+let product = "Droid";
+console.log(product); // "Droid"
+
+product = "DrOid";
+console.log(product); // "DrOid"
+</pre
+            >
+          </code>
+        </p>
+
         <!-- Section: Comparison operators.-->
 
         <h3>Оператори порівняння. Comparison operators.</h3>
+
+        <p>
+          Оператори порівняння повертають булеве значення (<code>true</code> або
+          <code>false</code>) залежно від результату порівняння.
+        </p>
+
+        <p>Оператор &gt; (більше);</p>
+        <p>Оператор &lt; (менше);</p>
+        <p>Оператор &gt;= (більше або дорівнює);</p>
+        <p>Оператор &lt;= (менше або дорівнює)</p>
+
+        <p>
+          <code>
+            <pre>
+const a = 2;
+const b = 5;
+
+console.log(a &gt; b); // false
+console.log(b &gt; a); // true
+console.log(a &gt;= b); // false
+console.log(b &gt;= a); // true
+
+console.log(a &lt; b); // true
+console.log(b &lt; a); // false
+console.log(a &lt;= b); // true
+console.log(b &lt;= a); // false
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Оголоси змінну <code>isAdult</code> та задай їй результат перевірки
+          значення змінної <code>age</code>. Використай оператори порівняння та
+          доповни код так, щоб значенням <code>isAdult</code> було
+          <code>true</code>, якщо вік користувача більше або дорівнює 18 та
+          <code>false</code>, якщо менше 18.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const age = 16; 
+const isAdult = age >= 18;
+
+console.log(isAdult);
+</pre
+            >
+          </code>
+        </p>
+
+        <h3>Оператори рівності</h3>
+
+        <p>Оператор == (дорівнює);</p>
+        <p>Оператор != (не дорівнює);</p>
+
+        <p>
+          <code>
+            <pre>
+console.log(5 == 5); // true
+console.log(5 == 3); // false
+console.log(5 != 3); // true
+console.log(5 != 5); // false
+</pre
+            >
+          </code>
+        </p>
+
+        <p>Оператор === (сувора рівність);</p>
+        <p>Оператор !== (сувора нерівність)</p>
+
+        <p>
+          <code>
+            <pre>
+console.log(5 === 5); // true
+console.log(5 === "5"); // false
+console.log(5 !== "5"); // true
+console.log(5 !== 5); // false
+console.log(1 === true); // false
+console.log(1 !== true); // true
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Оголоси змінну <code>isValid</code> і задай їй значенням результат
+          перевірки рівності паролей в змінних <code>correctPassword</code> і
+          <code>userPassword</code>. Якщо паролі співпадають (сувора рівність),
+          значення <code>isValid</code> має бути true Якщо паролі не
+          співпадають, значення <code>isValid</code> має бути <code>false</code>
+        </p>
+
+        <p>
+          <code>
+            <pre>
+const correctPassword = "jqueryismyjam";
+const userPassword = "mangodab3st";
+const isValid = correctPassword === userPassword;
+</pre
+            >
+          </code>
+        </p>
+
+        <h4>Перетворення типів: числа</h4>
+        <p>
+          Для явного перетворення будь-якого значення в число можна
+          використовувати вбудовану функцію <code>Number()</code>, яка повертає
+          результат у вигляді числа.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log(Number("5")); // 5
+console.log(Number(true)); // 1
+console.log(Number(false)); // 0
+console.log(Number(null)); // 0
+</pre
+            >
+          </code>
+        </p>
+
+        <p>true завжди приводиться до 1;</p>
+        <p>false , null і "" завжди приводяться до 0.</p>
+
+        <p>
+          Якщо неможливо привести значення до числа, результатом перетворення
+          буде спеціальне значення <code>NaN</code> (Not a Number).
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log(Number(undefined)); // NaN
+console.log(Number("Jacob")); // NaN
+console.log(Number("25px")); // NaN
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Арифметичні операції (<code>+, -, *, /</code>) виконують неявне
+          перетворення типів.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log("5" * 2); // 10
+console.log("10" - 5); // 5
+console.log(5 + true); // 6
+console.log(5 - true); // 4
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Якщо у виразі присутній хоча б один із операндів з типом числа, то
+          обидва операнди приводяться до чисел. Це відбувається у всіх
+          арифметичних операціях, окрім додавання. + біля рядкових операндів
+          викликає їх з'єднання (конкатинацію).
+        </p>
+
+        <p>
+          У разі використання операторів порівняння (&lt;, &gt;, &lt;=, &gt;=)
+          також виконується неявне перетворення типів. Якщо операнди різних
+          типів, то перед порівнянням вони приводяться до числа.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log("10" &gt; 5); // true
+console.log(10 &gt; "5"); // true
+console.log(5 &gt; true); // true
+console.log(5 &lt; true); // false
+console.log("5" &lt; true); // false
+</pre
+            >
+          </code>
+        </p>
+
+        <h3>Перетворення рядків у числа.</h3>
+
+        <p>Метод <code>Number.parseInt()</code> приймає 2 аргументи:</p>
+
+        <ul>
+          <li>
+            Рядок. Якщо аргумент не є рядком, то він буде спочатку перетворений
+            у рядок
+          </li>
+          <li>
+            Система числення, до якої відноситься рядок (не обов’язковий
+            аргумент, за замовчуванням десяткова система). Наприклад, для
+            десяткової системи буде 10, для шістнадцяткової - 16 тощо.
+          </li>
+        </ul>
+
+        <p>
+          Метод аналізує рядок зліва направо, видаляючи пробіли на початку і
+          перетворюючи допустимі символи у число до тих пір, поки не зіткнеться
+          з першим недопустимим символом. Після цього аналіз припиняється, і вже
+          перетворене ціле число повертається.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log(Number.parseInt("5")); // 5
+console.log(Number.parseInt("5.5")); // 5
+console.log(Number.parseInt("5cm")); // 5
+console.log(Number.parseInt("12qwe74")); // 12
+console.log(Number.parseInt("12.46qwe79")); // 12
+console.log(Number.parseInt("cm5")); // NaN
+console.log(Number.parseInt("")); // NaN
+console.log(Number.parseInt("qweqwe")); // NaN
+</pre
+            >
+          </code>
+        </p>
+
+        <p>
+          Якщо перші символи рядка не можуть бути перетворені на число, або
+          рядок порожній чи відсутній, результатом буде значення NaN (Not a
+          Number).
+        </p>
+
+        <h4>Метод <code>Number.parseFloat()</code></h4>
+
+        <p>
+          Метод <code>Number.parseFloat()</code> аналогічний
+          <code>Number.parseInt()</code> з однієї відмінністю: перетворює рядок
+          на число з плаваючою крапкою.
+        </p>
+
+        <p>
+          <code>
+            <pre>
+console.log(Number.parseFloat("5")); // 5
+console.log(Number.parseFloat("5.5")); // 5.5
+console.log(Number.parseFloat("3.14")); // 3.14
+console.log(Number.parseFloat("5cm")); // 5
+console.log(Number.parseFloat("5.5cm")); // 5.5
+console.log(Number.parseFloat("12qwe74")); // 12
+console.log(Number.parseFloat("12.46qwe79")); // 12.46
+console.log(Number.parseFloat("cm5")); // NaN
+console.log(Number.parseFloat("")); // NaN
+console.log(Number.parseFloat("qweqwe")); // NaN
+</pre
+            >
+          </code>
+        </p>
+
+        Порожній чи відсутній, результатом буде значення
+        <code>NaN (Not a Number)</code>.
+
+        <!--  -->
         <h4>Арифметичні функції. Arithmetic functions.</h4>
 
         <p>
@@ -529,6 +1166,7 @@ const totalPrice = pricePerItem * orderedQuantity;</pre
           </li>
         </ul>
 
+        <!--  -->
         <h3>Основи функцій. The basics of functions.</h3>
         <h4>Оголошення та виклик функції. Declaring and calling functions.</h4>
         <p>Cтруктура оголошення функції</p>

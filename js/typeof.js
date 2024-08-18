@@ -14,3 +14,12 @@ console.log(typeof username); // виведе "undefined"
 
 let status = null;
 console.log(typeof status); // виведе "object"
+
+// let age = 25;
+// age = age + 1;
+// console.log(age); // 26
+
+let age = 25;
+age += 1;
+console.log(age); // 26
+document.getElementById("age").innerText = age;
