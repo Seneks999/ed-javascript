@@ -1365,8 +1365,427 @@ console.log(multiply(2, 3, 5)); // 30
         </p>
       </div>
     </section>
+
+    <!-- Section two -->
+    <section>
+      <div class="container">
+        <h2>Модуль 2. Розгалуження і цикли</h2>
+        <h3>Розгалуження. Branching.</h3>
+        <h4>Інструкція if.</h4>
+        <p>
+          Інструкція <mark><code>if</code></mark> дозволяє виконати певний блок
+          коду тільки в тому випадку, якщо задана умова істинна (тобто приймає
+          значення <mark><code>true</code></mark
+          >).
+        </p>
+
+        <code>
+          <pre>
+     if (condition) {
+  // код, який виконується, якщо умова (condition) істинна
+}
+                  </pre
+          >
+        </code>
+        <p>
+          К оли інтерпретатор зустрічає інструкцію <mark><code>if</code></mark
+          >, він обчислює вказану умову в круглих дужках (condition),
+          перетворюючи її до логічного типу (boolean). Якщо умова (condition)
+          перетворюється до true, виконується блок коду, написаний у фігурних
+          дужках <mark><code>{}</code></mark> — (statement).
+        </p>
+
+        <p>
+          Якщо умова (condition) перетворюється до
+          <mark><code>false</code></mark
+          >, блок коду не виконається і продовжиться виконання програми, що іде
+          після інструкції <mark><code>if.</code></mark>
+        </p>
+        <p>
+          Якщо subscription — це "pro", тобто, умова перетворюється до true,
+          price встановлюється 100.
+        </p>
+
+        <code>
+          <pre>
+let price = 0;
+const subscription = "pro";
+
+if (subscription === "pro") {
+  price = 100;
+}
+
+console.log(price); // 100
+                  </pre
+          >
+        </code>
+
+        <code>
+          <pre>
+let price = 0;
+const subscription = "free";
+
+if (subscription === "pro") {
+  price = 100;
+}
+
+console.log(price); // 0
+                  </pre
+          >
+        </code>
+
+        <p>
+          Якщо умова перетворюється до <code>false</code>, код у фігурних дужках
+          не буде виконуватися і <code>price</code> залишиться рівним 0.
+        </p>
+
+        <code>
+          <pre>
+function checkAge(age) {
+  if (age >= 18) {
+    return "You are an adult";
+  }
+}
+
+// Перевірка функції
+console.log(checkAge(20)); // "You are an adult"
+console.log(checkAge(17)); // undefined
+console.log(checkAge(10)); // undefined
+console.log(checkAge(30)); // "You are an adult"
+                  </pre
+          >
+        </code>
+
+        <h4>Метод innerHTML</h4>
+        <div id="output1"></div>
+        <div id="output2"></div>
+        <div id="output3"></div>
+        <div id="output4"></div>
+
+        <h4>Завдання</h4>
+        <p>
+          Доповнити код функції <code>checkAge(age)</code> так, щоб функція
+          повертала рядок <code>"You are an adult"</code>, якщо значення
+          параметра age більше або дорівнює <code>18</code>. Використай у тілі
+          функції інструкцію <code>if</code> для перевірки значення age.
+        </p>
+
+        <code>
+          <pre>
+function checkAge(age) {
+  if (age >= 18) {
+    return "You are an adult";
+  }
+}
+
+console.log(checkAge(20));
+console.log(checkAge(17));
+console.log(checkAge(10));
+console.log(checkAge(30));
+
+                  </pre
+          >
+        </code>
+
+        <h4>Інструкція if...else</h4>
+        <p>
+          Синтаксис інструкції <code>if</code> можна доповнити блоком
+          <code>else</code> для визначення альтернативних варіантів виконання
+          коду.
+        </p>
+
+        <code>
+          <pre>
+if (condition) {
+  // код, який виконується, якщо умова істинна
+} else {
+	// код, який виконується, якщо умова хибна
+}
+                  </pre
+          >
+        </code>
+
+        <h4>Завдання 3</h4>
+        <p>
+          Якщо умова <code>(condition)</code> перетворюється до
+          <code>true</code>, то виконається код блоку <code>if</code>
+          <code>(if block statements)</code>.
+        </p>
+        <p>
+          Якщо умова <code>(condition)</code> перетворюється до
+          <code>false</code>, то виконається код блоку
+          <code>else (else block statements)</code>.
+        </p>
+
+        <p>
+          Функція checkStorage(available, ordered) перевіряє можливість
+          оформлення замовлення і повертає повідомлення про результат. Вона
+          оголошує два параметри, значення яких будуть задаватися під час її
+          виклику:
+        </p>
+
+        <p>available - доступна кількість товарів на складі</p>
+        <p>ordered - кількість одиниць товару в замовленні</p>
+        <p>
+          Використовуючи розгалуження, доповни код функції таким чином, щоб:
+        </p>
+
+        <p>
+          Якщо в замовленні вказане число, яке перевищує доступну кількість
+          товарів на складі, функція повертає рядок "Not enough goods in stock!"
+        </p>
+        <p>
+          В іншому випадку функція повертає рядок "Order is processed, our
+          manager will contact you"
+        </p>
+
+        <code>
+          <pre>
+function checkStorage(available, ordered) {
+  if (ordered > available) {
+    return "Not enough goods in stock!";
+  } else {
+    return "Order is processed, our manager will contact you";
+  }
+}
+
+console.log(checkStorage(100, 50));
+console.log(checkStorage(100, 130));
+console.log(checkStorage(200, 20));
+console.log(checkStorage(200, 150));
+console.log(checkStorage(150, 180));</pre
+          >
+        </code>
+
+        <h4>Блок else...if</h4>
+        <p>
+          Конструкція <code>else...if</code> розширює конструкцію
+          <code>if...else</code> і дозволяє перевірити та зреагувати на
+          виконання або невиконання кількох умов.
+        </p>
+
+        <code>
+          <pre>
+if (condition_1) {
+  // код, який виконується, якщо умова (condition_1) істинна
+} else if (condition_2) {
+  // код, який виконується, якщо умова (condition_2) істинна
+} else if (condition_3) {
+  // код, який виконується, якщо умова (condition_3) істинна
+} else {
+	// код, який виконується, якщо всі умови хибні
+}
+</pre
+          >
+        </code>
+        <p>Кожна умова послідовно перевіряється зверху вниз.</p>
+        <p>
+          Якщо умова <code>condition_1</code> істинна, виконується відповідний
+          блок коду (тільки тіло відповідного блоку <code>if</code> або
+          <code>else if</code>), і перевірка завершується.
+        </p>
+        <p>
+          Якщо умова <code>condition_1</code> хибна, то перевіряється умова_2 і
+          далі.
+        </p>
+        <p>
+          Код у блоці else буде виконаний тільки у випадку, якщо жодна з умов у
+          блоках <code>if</code> та <code>else if</code> не є істинною.
+        </p>
+
+        <p>
+          У цьому прикладі спочатку перевіряється умова
+          <code>grade >= 90</code>.
+        </p>
+
+        <!-- else if -->
+        <code>
+          <pre>
+const grade = 85;
+
+if (grade >= 90) {
+  console.log("Perfectly");
+} else if (grade >= 80) {
+  console.log("Good");
+} else if (grade >= 70) {
+  console.log("Satisfactorily");
+} else {
+  console.log("Unsatisfactorily");
+}
+</pre
+          >
+        </code>
+
+        <!-- Завдання 3 -->
+
+        <p>
+          Функція <code>checkStorage(available, ordered)</code> перевіряє
+          можливість оформлення замовлення і повертає повідомлення про
+          результат. Вона оголошує два параметри, значення яких будуть
+          задаватися під час її виклику.
+        </p>
+
+        <p><code>available</code> - доступна кількість товарів на складі</p>
+        <p><code>ordered</code> - кількість одиниць товару в замовленні</p>
+        <p>
+          Використовуючи розгалуження, доповни код функції таким чином, щоб:
+        </p>
+
+        <p>
+          Якщо в замовленні ще немає товарів, тобто значення параметра
+          <code>ordered</code> дорівнює <code>0</code>, функція повертає рядок
+          <code>"There are no products in the order!"</code>.
+        </p>
+        <p>
+          Якщо товарів у замовленні більше, ніж їх доступно на складі, то
+          функція повертає рядок
+          <code
+            >"Your order is too large, there are not enough items in
+            stock!"</code
+          >.
+        </p>
+        <p>
+          В іншому випадку функція повертає рядок
+          <code>"The order is accepted, our manager will contact you"</code>.
+        </p>
+
+        <code>
+          <pre>
+function checkStorage(available, ordered) {
+  if (ordered === 0) {
+    return "There are no products in the order!";
+  } else if (ordered > available) {
+    return "Your order is too large, there are not enough items in stock!";
+  } else {
+    return "The order is accepted, our manager will contact you";
+  }
+}
+
+// Перевірка функції
+console.log(checkStorage(100, 50)); // "The order is accepted, our manager will contact you"
+console.log(checkStorage(100, 130)); // "Your order is too large, there are not enough items in stock!"
+console.log(checkStorage(70, 0)); // "There are no products in the order!"
+console.log(checkStorage(200, 20)); // "The order is accepted, our manager will contact you"
+console.log(checkStorage(200, 250)); // "Your order is too large, there are not enough items in stock!"
+console.log(checkStorage(150, 0)); // "There are no products in the order!"
+console.log(checkStorage(80, 80)); // "The order is accepted, our manager will contact you"
+</pre
+          >
+        </code>
+
+        <h3>Тернарний оператор. Ternary operator.</h3>
+        <p>
+          <dfn>Тернарний оператор</dfn> — це коротша синтаксична заміна
+          інструкції if...else.
+        </p>
+
+        <code>
+          <pre>
+&lt;condition&gt; ? &lt;expression if condition is true&gt; : &lt;expression if condition is false&gt;
+          </pre>
+        </code>
+        <p>Код з використанням інструкції if...else</p>
+        <code>
+          <pre>
+let type;
+const age = 20;
+
+if (age >= 18) {
+  type = 'adult';
+} else {
+  type = 'child';
+}
+
+console.log(type); // 'adult'
+
+          </pre>
+        </code>
+
+        <p>Той самий код з використанням тернарного оператора:</p>
+        <code>
+          <pre>
+const age = 20;
+const type = age >= 18 ? 'adult' : 'child';
+console.log(type); // 'adult'
+          </pre>
+        </code>
+
+        <p>
+          Знаходження більшого числа із двох з використанням інструкції
+          <code>if...else</code>:
+        </p>
+        <code>
+          <pre>
+const a = 5;
+const b = 10;
+let biggerNumber;
+
+if (a > b) {
+  biggerNumber = a;
+} else {
+  biggerNumber = b;
+}
+
+console.log(biggerNumber); // 10
+          </pre>
+        </code>
+        <p>Той самий код з використанням тернарного оператора:</p>
+        <code>
+          <pre>
+const a = 5;
+const b = 10;
+const biggerNumber = a > b ? a : b;
+
+console.log(biggerNumber); // 10
+          </pre>
+        </code>
+        <p>
+          Тернарний оператор рекомендується використовувати у найпростіших
+          випадках операції присвоєння чи повернення. Однак не рекомендується
+          використовувати його для складних розгалужень, оскільки це може
+          ускладнити читання та розуміння коду.
+        </p>
+        <p>
+          Функція checkPassword(password) порівнює переданий їй пароль (параметр
+          password) зі збереженим паролем адміністратора (correctPassword) і
+          повертає рядок з повідомленням про результат.
+        </p>
+        <p>
+          Використовуючи тернарний оператор, доповни функцію таким чином, щоб:
+        </p>
+        <p>
+          Якщо значення password і correctPassword збігаються, функція повертала
+          рядок "Access granted"
+        </p>
+        <p>
+          В іншому випадку, функція повертала рядок "Access denied, wrong
+          password!"
+        </p>
+
+        <code>
+          <pre>
+function checkPassword(password) {
+  const correctPassword = "jqueryismyjam";
+  
+  return password === correctPassword 
+    ? "Access granted" 
+    : "Access denied, wrong password!";
+}
+
+console.log(checkPassword("jqueryismyjam"));
+console.log(checkPassword("angul4r1sl1f3"));
+console.log(checkPassword("r3actsux"));
+          </pre>
+        </code>
+
+        <h3>Оператор switch</h3>
+      </div>
+    </section>
     <script src="js/jsgo.js"></script>
     <script src="js/connect.js" defer></script>
     <script src="js/typeof.js" defer></script>
+    <script src="js/sasha.js" defer></script>
+    <script src="js/if.js" defer></script>
+    <script src="js/good.js" defer></script>
   </body>
 </html>
