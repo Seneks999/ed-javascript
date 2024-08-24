@@ -29,13 +29,56 @@
 
     <section>
       <div class="container">
+        <!-- Словник -->
+        <h2>Словник.</h2>
+        <p>
+          <dfn>Інструкція (statements)</dfn> — це повний блок коду, який виконує
+          певну дію або набір дій. Інструкція може складатися з одного або
+          кількох виразів і зазвичай закінчується крапкою з комою ;. Інструкції
+          часто використовуються для управління потоком виконання коду.
+        </p>
+        <p>
+          Види інструкцій. Оголошення змінних: let x = 10; Умовні оператори: if
+          (condition) {...}; Цикли: for, while; Виклик функції: myFunction();
+        </p>
+        <p>
+          <dfn>Вираз (Expression) </dfn>— це будь-який фрагмент коду, який може
+          бути обчислений та повертає значення. Вирази можуть включати числа,
+          рядки, змінні, функції, та операції між ними. Вирази можуть бути
+          частиною інструкції.
+        </p>
+        <p>
+          Види виразів: числові вирази: 3 + 7, логічні вирази: x > 10, рядкові
+          вирази: "Hello" + " World".
+        </p>
+
+        <p>
+          <dfn>Оператор</dfn> — це спеціальний символ або ключове слово, яке
+          виконує певну дію над одним або кількома значеннями або змінними.
+          Оператори дозволяють виконувати арифметичні обчислення, логічні
+          порівняння, присвоєння значень змінним і багато іншого.
+        </p>
+
+        <p>Приклади операторів:</p>
+        <p>
+          Арифметичні оператори: +, -, *, / (додавання, віднімання, множення,
+          ділення).
+        </p>
+        <p>Логічні оператори: &&, ||, ! (логічне "і", "або", "не").</p>
+        <p>
+          Оператори порівняння: ==, ===, !=, > (рівність, строга рівність,
+          нерівність, більше).
+        </p>
+        <p>Оператор присвоєння: = (присвоєння значення змінній).</p>
+
+        <!-- Констект -->
         <h3>
           Інструкції для роботи с консолью в браузері. Instructions for working
           with the console in a browser.
         </h3>
         <p>Прописати в браузері <mark>about:blank</mark></p>
         <p>
-          Прописати <mark>allow pasting</mark> (яущо треба) щоб дозволити
+          Прописати <mark>allow pasting</mark> (якщо треба) щоб дозволити
           вставлення коду.
         </p>
         <p>
@@ -146,9 +189,9 @@
 
         <p id="definedd"></p>
         <script>
-          const hi = "Hello, world";
+          const hi = 'Hello, world';
           console.log(hi);
-          document.getElementById("definedd").innerText = hi;
+          document.getElementById('definedd').innerText = hi;
         </script>
 
         <p>
@@ -175,7 +218,7 @@
           >
         </code>
         <script>
-          console.log("JavaScript is awesome!");
+          console.log('JavaScript is awesome!');
           console.log(10);
         </script>
 
@@ -232,6 +275,66 @@
           Імена змінних, що містять логічні значення, звучать як питання, на яке
           можна відповісти “так” чи “ні”.
         </p>
+
+        <p>
+          <dfn>Undefined:</dfn> Тип даних, який має одне значення — undefined.
+          Це означає, що змінна була оголошена, але їй не було присвоєно
+          значення.
+        </p>
+
+        <code>
+          <pre>
+let x;
+console.log(x); // undefined</pre
+          >
+        </code>
+
+        <p>
+          <dfn>Null:</dfn> Це спеціальне значення, яке означає "немає значення".
+          Тип null також є примітивним типом.
+        </p>
+
+        <code>
+          <pre>
+let y = null;
+console.log(y); // null</pre
+          >
+        </code>
+
+        <p>
+          <dfn>Object:</dfn> Складний тип даних, який використовується для
+          зберігання колекцій даних і складних сутностей. Прикладом об'єкта є
+          об'єкт {} або масив []
+        </p>
+
+        <code>
+          <pre>
+let obj = { name: "Alice", age: 30 };
+let arr = [1, 2, 3];</pre
+          >
+        </code>
+        <p>
+          <dfn>BigInt:</dfn> Цей тип даних дозволяє працювати з цілими числами,
+          які виходять за межі діапазону типу Number.
+        </p>
+        <code>
+          <pre>
+let bigInt = 1234567890123456789012345678901234567890n;
+console.log(bigInt); // 1234567890123456789012345678901234567890n</pre
+          >
+        </code>
+        <p>
+          <dfn>Symbol:</dfn> Це унікальний і незмінний примітивний тип даних,
+          який використовується для створення унікальних ідентифікаторів для
+          об'єктів.
+        </p>
+
+        <code>
+          <pre>
+let sym = Symbol("description");
+console.log(sym); // Symbol(description)</pre
+          >
+        </code>
 
         <h3>Спеціальні значення. Special values.</h3>
 
@@ -1779,6 +1882,987 @@ console.log(checkPassword("r3actsux"));
         </code>
 
         <h3>Оператор switch</h3>
+        <p>
+          Використання switch є більш компактним і зручним способом для
+          порівняння виразів з кількома варіантами, ніж інструкції if...else та
+          else...if.
+        </p>
+        <h4>Приклад використання оператора <code>switch:</code></h4>
+
+        <code>
+          <pre>
+const fruit = 'apple';
+
+switch (fruit) {
+  case 'apple':
+    console.log('Apple selected');
+    break;
+  case 'banana':
+    console.log('Banana selected');
+    break;
+  case 'orange':
+    console.log('Orange selected');
+    break;
+  default:
+    console.log('The fruit is unknown');
+}
+          </pre>
+        </code>
+        <h4>Оператор break</h4>
+        <p>
+          Якщо break не вказано, виконання коду продовжиться в наступному
+          <mark>case</mark> і далі. Така поведінка називається "провалюванням"
+          (<mark>fall-through</mark>). Якщо потрібно, щоб кілька блоків case
+          виконували той самий код, можна опустити оператор break між ними.
+        </p>
+
+        <code>
+          <pre>
+const day = 3;
+
+switch (day) {
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+    console.log('This is a working day');
+    break;
+  case 6:
+  case 7:
+    console.log('It is a day off');
+    break;
+  default:
+    console.log('Invalid');
+}
+          </pre>
+        </code>
+
+        <p>
+          Функція getSubscriptionPrice(type) отримує рядок з типом передплати
+          користувача (параметр type), перевіряє її на збіг з трьома можливими
+          типами щомісячної передплати та повертає ціну, або повідомлення про
+          неправильний тип передплати.
+        </p>
+
+        <p>Якщо значення параметра type — це рядок:</p>
+
+        <p>"starter" — ціна передплати 0 кредитів.</p>
+        <p>"professional" — ціна передплати 20 кредитів.</p>
+        <p>"organization" — ціна передплати 50 кредитів.</p>
+        <p>
+          Для будь-якого іншого значення параметра type повертається рядок
+          "Invalid subscription type!".
+        </p>
+
+        <p>Використання оператора switch для розв'язання цієї задачі!</p>
+        <code>
+          <pre>
+function getSubscriptionPrice(type) {
+  switch (type) {
+    case "starter":
+      return 0;
+    case "professional":
+      return 20;
+    case "organization":
+      return 50;
+    default:
+      return "Invalid subscription type!";
+  }
+}
+
+console.log(getSubscriptionPrice("professional"));
+console.log(getSubscriptionPrice("organization"));
+console.log(getSubscriptionPrice("starter"));
+console.log(getSubscriptionPrice("random"));
+console.log(getSubscriptionPrice("premium"));
+          </pre>
+        </code>
+        <h4>
+          Пам’ятка під час використання розгалужень. A reminder when using
+          branches.
+        </h4>
+        <p>
+          Інструкція if є універсальною. Інструкції if…else і else…if
+          використовуються, коли потрібно прописати декілька умов. Отже, ці
+          інструкції зазвичай довші, ніж інші способи розгалужень.
+        </p>
+        <p>
+          Тернарний оператор краще використовувати для присвоєння або повернення
+          значення з тіла функції. В умові тернарного оператора може бути все що
+          завгодно: перевірка рівності / нерівності, на більше / менше, просто
+          перевірка на будь чого. Пам’ятай про обмеження: у нього має бути рівно
+          2 сценарії, не більше.
+        </p>
+        <p>
+          Оператор switch перевіряє тільки на сувору рівність. Використовуючи
+          оператор switch, завжди: пам’ятай про оператор break; використовуй
+          тільки 1 default, він завжди має бути останнім.
+        </p>
+        <h4>Блокова область видимості. Blocked viewport.</h4>
+        <p>
+          Під час оголошення змінної або функції, вона стає "видимою" тільки в
+          певній частині коду.
+        </p>
+        <p>
+          Змінні або функції, які оголошені поза будь-якими блоками коду — тобто
+          в глобальній області видимості є глобальними змінними і будуть
+          доступні в будь-якій частині коду.
+        </p>
+        <code>
+          <pre>
+// Глобальна змінна
+const value = "I'm a global variable";
+
+if (true) {
+	// Можна звернутися до глобальної змінної
+  console.log(value); // "I'm a global variable"
+}
+
+// Можна звернутися до глобальної змінної
+console.log(value); // "I'm a global variable"
+          </pre>
+        </code>
+        <p>
+          Змінна value оголошена в глобальній області видимості (поза блоком
+          коду), вона буде доступна в будь-якому місці після оголошення.
+        </p>
+        <p>
+          Будь-яка конструкція, що використовує фігурні дужки {} (умови,
+          функції, цикли тощо) створює нову локальну блочну область видимості.
+          Змінні, оголошені в цій області видимості, можуть бути використані
+          тільки всередині цього блоку коду. Це локальні змінні.
+        </p>
+        <code>
+          <pre>
+if (true) {
+  // Локальна змінна
+	const value = "I'm a local variable";
+  console.log(value); // "I'm a local variable"
+}
+
+// Помилка: локальну змінну не видно за межами блоку
+console.log(value); // ReferenceError: value is not defined
+          </pre>
+        </code>
+        <p>
+          Область видимості не має доступу до змінних, що оголошені у вкладених
+          областях видимості.
+        </p>
+        <p>
+          Код у блоці A має доступ до змінних, оголошених у Global, але не має
+          доступу до змінних, оголошених у блоках B і C.
+        </p>
+        <p>
+          Код у блоці B має доступ до змінних, оголошених у Global і в блоці A,
+          але не має доступу до змінних, оголошених у блоці C.
+        </p>
+        <p>
+          Код у блоці C має доступ до змінних, оголошених у Global, але не має
+          доступу до змінних, оголошених у блоках A і B.
+        </p>
+        <code>
+          <pre>
+const globalVar = "Global";
+
+console.log(globalVar); // Доступ до globalVar з глобальної області видимості
+// Немає доступу до aVar, bVar і cVar
+
+if(true) {
+	const aVar = "A";
+	console.log(globalVar); // Доступ до globalVariable з блоку A
+  console.log(aVar); // Доступ до aVar з блоку A
+	// Немає доступу до bVar і cVar
+
+	if(true) {
+		const bVar = "B";
+		console.log(globalVar); // Доступ до globalVariable з блоку B
+	  console.log(aVar); // Доступ до aVar з блоку B
+	  console.log(bVar); // Доступ до bVar з блоку B
+		// Немає доступу до cVar
+	}
+}
+
+console.log(globalVar); // Доступ до globalVar із глобальної області видимості
+// Немає доступу до aVar, bVar і cVar
+
+if(true) {
+	const cVar = "C";
+  console.log(globalVariable); // Доступ до globalVar з блоку C
+  console.log(cVar); // Доступ до cVar з блоку C
+	// Немає доступу до aVar і bVar
+}
+
+console.log(globalVar); // Доступ до globalVar із глобальної області видимості
+// Немає доступу до aVar, bVar і cVar
+          </pre>
+        </code>
+        <h2>Логічні оператори. Logical operators.</h2>
+        <p>
+          <dfn>Логічне перетворення типів</dfn> означає приведення значення
+          будь-якого типу даних у логічне (булеве) значення
+          <code>true</code> або <code>false</code>. Існує кілька правил, які
+          визначають, які значення перетворюються на <code>true</code>, а які на
+          <code>false</code>.
+        </p>
+        <p>
+          Ці правила працюють як для явного перетворення типів за допомогою
+          функції <code>Boolean()</code>, так і для неявного в умовних
+          операціях, наприклад, у конструкціях <code>if</code> чи логічних
+          операторах.
+        </p>
+        <p>
+          Логічні значення <code>true</code> та <code>false</code> залишаються
+          незмінними.
+        </p>
+        <code>
+          <pre>
+console.log(Boolean(true)); // true
+console.log(Boolean(false)); // false
+          </pre>
+        </code>
+        <p>
+          Число <code>0</code>, значення <code>NaN</code>, <code>null</code> і
+          undefined завжди перетворюються на <code>false</code>. Усі інші числа
+          перетворюються на <code>true</code>.
+        </p>
+        <code>
+          <pre>
+console.log(Boolean(NaN)); // false
+console.log(Boolean(null)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean(0)); // false
+console.log(Boolean(3.14)); // true
+console.log(Boolean(-10)); // true
+          </pre>
+        </code>
+        <p>
+          У прикладі нижче начення в умові інструкцій if приводиться до false,
+          отже, виконується код із блоку else.
+        </p>
+        <code>
+          <pre>
+if(null) {
+	console.log("Block if")
+} else {
+	console.log("Block else")
+}
+
+if(0) {
+	console.log("Block if")
+} else {
+	console.log("Block else")
+}
+          </pre>
+        </code>
+        <p>
+          Значення в умові інструкції if приводиться до true, отже, виконується
+          код із блоку if.
+        </p>
+        <code>
+          <pre>
+if(5) {
+	console.log("Block if")
+} else {
+	console.log("Block else")
+}
+          </pre>
+        </code>
+        <h4>6 випадків, які приводяться до false:</h4>
+        <p>1. 0</p>
+        <p>2. ""</p>
+        <p>3. Nan</p>
+        <p>4. null</p>
+        <p>5. underfined</p>
+        <p>6. false</p>
+
+        <p>
+          <dfn>Оператор "І" (&&)</dfn> наводить усі операнди до логічного типу
+          (<code>true</code> або <code>false</code>) і повертає значення одного
+          з них. Дозволяє перевірити, чи виконані всі умови у виразі.
+        </p>
+        <p>
+          <dfn>Оператор “І”</dfn> зліва направо перевіряє почергово обидва
+          операнди на істинність та повертає або значення останнього істинного
+          (тільки правого) операнда, або першого хибного (лівого чи правого), на
+          якому він запнувся.
+        </p>
+        <code>
+          <pre>
+console.log("hello" && 5); // 5
+console.log(5 && "hello"); // "hello"
+
+console.log("mango" && "poly"); // "poly"
+console.log("poly" && "mango"); // "mango"
+
+console.log(3 && true); // true
+console.log(true && 3); // 3
+          </pre>
+        </code>
+        <p>
+          у цьому прикладі один із операндів буде приведений до false, отже,
+          результатом буде хибний операнд.
+        </p>
+        <code>
+          <pre>
+console.log("hello" && 0); // 0
+console.log(0 && "hello"); // 0
+
+console.log(3 && false); // false
+console.log(false && 3); // false
+
+console.log(0 && ""); // 0
+console.log("" && 0); // ""
+          </pre>
+        </code>
+        <p>
+          У прикладі <code>“hello” && 0</code> лівий операнд приводиться до
+          true, а правий до <code>false</code>, тому результатом виразу буде
+          значення правого операнда, який першим був приведений до false, тобто
+          <code>0</code>.
+        </p>
+        <p>
+          У приклад <code>0 && “hello”</code> лівий операнд приводиться до
+          <code>false</code>, тому правий операнд не буде обчислюватися.
+          Результатом виразу буде значення лівого операнда, який першим був
+          приведений до <code>false</code>, тобто <code>0</code>.
+        </p>
+        <p>
+          якщо операндами є вирази, то спочатку вони обчислюються, а потім їх
+          результати будуть порівнюватися оператором &&.
+        </p>
+
+        <h3>Логічне "АБО"</h3>
+        <p>
+          <dfn>Оператор "АБО" (||)</dfn> перетворює всі операнди до логічного
+          типу (true або false), перевіряє чи є хочаб один із операдів "true",
+          та і повертає значення одного з них. Якщо хоча б один із операндів
+          можна перетворити на true, результатом логічного «АБО» буде true.
+        </p>
+        <code>
+          <pre>
+console.log("hello" && 0); // 0
+cexpression1 || expression2
+          </pre>
+        </code>
+
+        <code>
+          <pre>
+console.log(true || false); // true
+console.log(false || true); // true
+
+console.log(5 || false); // 5
+console.log(false || 5); // 5
+
+console.log("hello" || 0); // "hello"
+console.log(0 || "hello"); // "hello"
+          </pre>
+        </code>
+        <p>
+          Якщо до істини було перетворено перший операнд, то другий навіть не
+          буде оцінюватися. Це може мати практичне застосування, особливо коли
+          другий операнд є виразом, який має високу вартість обчислення.
+        </p>
+        <code>
+          <pre>
+console.log(5 || 3); // 5
+console.log(3 || 5); // 3
+
+console.log("mango" || "poly"); // "mango"
+console.log("poly" || "mango"); // "poly"
+          </pre>
+        </code>
+
+        <p>
+          Якщо всі операнди перетворюються на false, результатом буде значення
+          крайнього правого операнда.
+        </p>
+        <code>
+          <pre>
+console.log(0 || false); // false
+console.log(false || 0); // 0
+
+console.log(null || ""); // ""
+console.log("" || null); // null
+          </pre>
+        </code>
+        <p>
+          На практиці оператор «АБО» також використовується для перевірки
+          множинних умов.
+        </p>
+        <code>
+          <pre>
+const a = 5;
+console.log(a &lt; 10 || a &gt; 30); // true || false -&gt; true
+
+const b = 50;
+console.log(b &lt; 10 || b > 30); // false || true -&gt; true
+
+const c = 20;
+console.log(c - 20 || c * 2); // 0 || 40 -&gt; 40
+          </pre>
+        </code>
+
+        <p>В умові інструкції if.</p>
+        <code>
+          <pre>
+const screenWidth = 700;
+const sm = 320;
+const md = 768;
+const lg = 1200;
+
+if(screenWidth &lt;= sm || screenWidth > md) {
+	console.log("Mobile or Desktop screen");
+  // у консолі буде пусто, оскільки жодна з умов не перетворилась на true
+}
+          </pre>
+        </code>
+        <p>
+          Функція <code>checkAccess(subType)</code> перевіряє, чи може
+          користувач отримати доступ до контенту. Перевірка відбувається за
+          типом передплати. Використовуючи оператор "АБО", доповни код функції
+          так, щоб якщо значення параметра <code>subType</code> дорівнює рядкам
+          <code>"pro"</code> або <code>"vip"</code>, то функція повертала
+          <code>true</code> і користувач отримував доступ. В іншому випадку
+          повертала <code>false</code>.
+        </p>
+        <code>
+          <pre>
+function checkAccess(subType) {
+  return subType === "pro" || subType === "vip";
+}
+
+// Перевірка функції
+console.log(checkAccess("pro")); // true
+console.log(checkAccess("starter")); // false
+console.log(checkAccess("vip")); // true
+console.log(checkAccess("free")); // false
+          </pre>
+        </code>
+        <p>
+          <dfn>Логічне «НІ» (!)</dfn> — це унарний оператор — він виконує
+          операцію над одним операндом праворуч. Логічне «НІ» приводить операнд
+          до логічного значення (true або false) і потім заперечує (інвертує)
+          його, тобто заміняє на протилежне: true —> false, а false —> true.
+        </p>
+        <code>
+          <pre>
+console.log(!true); // false
+console.log(!false); // true
+console.log(!3); // !3 -> !true -> false
+console.log(!"Mango"); // !"Mango" -> !true -> false
+console.log(!0); // !0 -> !false -> true
+console.log(!""); // !"" -> !false -> true
+console.log(!null); // !null -> !false -> true
+          </pre>
+        </code>
+        <p>
+          На практиці логічне заперечення використовується для перевірки від
+          зворотного. Наприклад, можна дозволити написати повідомлення в чаті,
+          лише якщо користувач не заблокований.
+        </p>
+        <code>
+          <pre>
+const isBlocked = false;
+const canChat = !isBlocked; // !false -> true
+
+if(canChat) {
+	console.log("Can type in chat!")
+} else {
+	console.log("Blocked from typing in chat!")
+}
+          </pre>
+        </code>
+
+        <p>
+          Функція <code>toggleModalVisibility(isVisible)</code> перемикає стан
+          відображення модального вікна. У параметрі <code>isVisible</code> вона
+          очікує буль <code>true</code> або <code>false</code>. Доповни код
+          функції так, щоб вона повертала протилежне значення цього параметра.
+        </p>
+        <pre>
+      <code>
+function toggleModalVisibility(isVisible) {
+return !isVisible;
+}
+
+console.log(toggleModalVisibility(true)); // false
+console.log(toggleModalVisibility(false)); // true
+      </code>
+        </pre>
+
+        <p>В JS загалом 8 видів типів даних.</p>
+        <p>
+          Низка функций присутня тільки в браузері. Наприклад: alert('text');
+        </p>
+        <h3>Прикдади використання JavaScript в html документі</h3>
+        <p>Властивості — це описові характеристики сутності.</p>
+        <p>Методи — це дії, які можна виконати із сутністю.</p>
+        <p>Щоб отримати довжину рядка, використовується властивість length:</p>
+        <pre>
+      <code>
+const message = "JavaScript is awesome";
+console.log(message.length); // 21
+      </code>
+        </pre>
+        <p>
+          Виклик методу схожий на доступ до властивості, але наприкінці
+          додаються круглі дужки, як при виклику функції:
+        </p>
+        <pre>
+      <code>
+objectName.method()
+      </code>
+        </pre>
+        <pre>
+      <code>
+const message = "JavaScript is awesome";
+console.log(message.toUpperCase()); // "JAVASCRIPT IS AWESOME"
+      </code>
+        </pre>
+        <p>
+          <dfn>Метод slice()</dfn> використовується для створення копії частини
+          або всього рядка без зміни оригінального рядка. Він дозволяє
+          витягувати підрядок з вихідного рядка, вказуючи початковий та кінцевий
+          індекси.
+        </p>
+        <pre>
+      <code>
+const fullName = "Jacob Mercer";
+console.log(fullName.slice(0, 4)); // 'Jaco'
+console.log(fullName.slice(3, 9)); // 'ob Mer'
+console.log(fullName.slice(0, fullName.length)); // 'Jacob Mercer'
+      </code>
+        </pre>
+        <p>
+          Якщо <code>endIndex</code> не вказаний, витягуються всі елементи до
+          кінця рядка.
+        </p>
+        <pre>
+      <code>
+const fullName = "Jacob Mercer";
+console.log(fullName.slice(1)); // 'acob Mercer'
+console.log(fullName.slice(3)); // 'ob Mercer'
+      </code>
+        </pre>
+        <p>
+          Якщо викликати метод <code>slice()</code> без аргументів, він створює
+          точну копію рядка і повертає її.
+        </p>
+        <pre>
+      <code>
+const fullName = "Jacob Mercer";
+console.log(fullName.slice()); // 'Jacob Mercer'
+      </code>
+        </pre>
+        <p>
+          Результат виклику методу <code>slice()</code> можна зберігати в
+          змінній для подальшого використання.
+        </p>
+        <pre>
+      <code>
+const fullName = "Jacob Mercer";
+const firstName = fullName.slice(0, 5);
+const lastName = fullName.slice(6);
+
+console.log(fullName); // "Jacob Mercer"
+console.log(firstName); // "Jacob"
+console.log(lastName); // "Mercer"
+      </code>
+        </pre>
+
+        Ф
+        <p>
+          Ф ункція getSubstring(string, length) приймає рядок і повертає новий
+          підрядок (його часткову копію). Вона оголошує два параметри, значення
+          яких будуть задаватися під час її виклику: Ф
+        </p>
+        <p>string - оригінальний рядок</p>
+        <p>length - довжина нового підрядка</p>
+        <p>
+          Доповни код функції так, щоб вона повертала новий підрядок, який
+          починається від початку string і має довжину length.
+        </p>
+        <pre>
+      <code>
+function getSubstring(string, length) {
+  return string.substring(0, length);
+}
+
+console.log(getSubstring('Hello world', 3)); // "Hel"
+console.log(getSubstring('Hello world', 5)); // "Hello"
+console.log(getSubstring('Hello world', 8)); // "Hello wo"
+console.log(getSubstring('Hello world', 11)); // "Hello world"
+console.log(getSubstring('Hello world', 0)); // ""
+      </code>
+        </pre>
+        <h3>Методи toLowerCase() і toUpperCase()</h3>
+        <p>
+          Метод <code>toLowerCase()</code> повертає новий рядок, у якому всі
+          символи вихідного рядка перетворені в нижній регістр.
+        </p>
+        <pre>
+      <code>
+const message = "Welcome to Bahamas!";
+console.log(message.toLowerCase()); // "welcome to bahamas!"
+console.log(message); // "Welcome to Bahamas!"
+      </code>
+        </pre>
+        <p>
+          Метод <code>toUpperCase()</code> повертає новий рядок, у якому всі
+          символи вихідного рядка перетворені у верхній регістр.
+        </p>
+        <pre>
+      <code>
+const message = "Welcome to Bahamas!";
+console.log(message.toUpperCase()); // "WELCOME TO BAHAMAS!"
+console.log(message); // "Welcome to Bahamas!"
+      </code>
+        </pre>
+        <p>
+          Розгляньмо ситуацію: При пошуку за ключовим словом, користувач вводить
+          рядок 'saMsUng', а його треба порівняти з рядком 'samsung' або
+          'SAMSUNG'.
+        </p>
+        <pre>
+      <code>
+console.log('saMsUng' === 'samsung'); // false
+console.log('saMsUng' === 'SAMSUNG'); // false
+      </code>
+        </pre>
+        <p>
+          Щоб не вимагати абсолютно точного введення, можна зробити
+          «нормалізацію» введеного користувачем рядка, тобто перетворити всі
+          його символи у верхній або нижній регістр.
+        </p>
+        <pre>
+      <code>
+const brandName = 'samsung';
+const userInput = 'saMsUng';
+const lowercaseInput = userInput.toLowerCase();
+
+console.log(brandName); // 'samsung'
+console.log(userInput); // 'saMsUng'
+console.log(userInput === brandName); // false
+console.log(lowercaseInput); // 'samsung'
+console.log(lowercaseInput === brandName); // true
+      </code>
+        </pre>
+        <p>Функція normalizeInput(input, to) оголошує два параметри:</p>
+
+        <p>input - рядок, який потрібно привести до певного регістру</p>
+        <p>
+          to - рядок с двома можливими значеннями: "upper" або "lower", що
+          вказують до якого регістру потрібно привести значення input
+        </p>
+        Доповни код функції таким чином, щоб:
+
+        <p>
+          Якщо значення параметра to — це рядок "upper", то функція повертала
+          копію рядка input, але у верхньому регістрі
+        </p>
+        <p>
+          В іншому разі, функція повертала копію рядка inputу нижньому регістрі
+        </p>
+        <pre>
+      <code>
+function normalizeInput(input, to) {
+  return to === "upper" ? input.toUpperCase() : input.toLowerCase();
+}
+
+// Приклади виклику функції та їх результати:
+console.log(normalizeInput("This ISN'T SpaM", "lower")); // "this isn't spam"
+console.log(normalizeInput("This ISN'T SpaM", "upper")); // "THIS ISN'T SPAM"
+console.log(normalizeInput("Big SALE", "lower")); // "big sale"
+console.log(normalizeInput("Big SALE", "upper")); // "BIG SALE"
+console.log(normalizeInput("Stay Awhile and Listen", "lower")); // "stay awhile and listen"
+console.log(normalizeInput("Stay Awhile and Listen", "upper")); // "STAY AWHILE AND LISTEN"
+      </code>
+        </pre>
+        <ol>
+          <li>
+            Параметри функції:
+            <ul>
+              <li>input: Рядок, який потрібно перетворити.</li>
+              <li>
+                to: Рядок, який визначає, чи потрібно перетворити input на
+                верхній або нижній регістр. Він може мати два значення: "upper"
+                або "lower".
+              </li>
+            </ul>
+          </li>
+          <li>
+            Умовний (тернарний) оператор:
+            <ul>
+              <li>
+                to === "upper": Це умова, яка перевіряє, чи дорівнює значення
+                параметра to рядку "upper".
+              </li>
+              <li>
+                ?: Якщо умова істинна (тобто to === "upper"), виконується вираз
+                після знака питання (input.toUpperCase()).
+              </li>
+              <li>
+                :: Якщо умова хибна (тобто to !== "upper"), виконується вираз
+                після двокрапки (input.toLowerCase()).
+              </li>
+            </ul>
+          </li>
+          <li>
+            Методи toUpperCase() та toLowerCase():
+            <ul>
+              <li>
+                input.toUpperCase(): Приводить всі символи в рядку input до
+                верхнього регістру.
+              </li>
+              <li>
+                input.toLowerCase(): Приводить всі символи в рядку input до
+                нижнього регістру.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p>Як працює функція:</p>
+        <ul>
+          <li>
+            кщо параметр to дорівнює "upper", функція повертає рядок input,
+            перетворений на верхній регістр.
+          </li>
+          <li>
+            Якщо to не дорівнює "upper" (наприклад, "lower" або будь-яке інше
+            значення), функція повертає рядок input, перетворений на нижній
+            регістр.
+          </li>
+        </ul>
+        <p>Приклад:</p>
+        <ul>
+          <li>Виклик normalizeInput("Hello", "upper") поверне "HELLO".</li>
+          <li>Виклик normalizeInput("Hello", "lower") поверне "hello".</li>
+        </ul>
+
+        <h3>Метод includes()</h3>
+
+        <p>
+          Метод рядків <code>includes()</code> використовується для перевірки
+          наявності підрядка у рядку. Він повертає логічне значення
+          <code>true</code>, якщо підрядок знайдено, і <code>false</code>, якщо
+          підрядок відсутній.
+        </p>
+        <pre>
+      <code>
+str.includes(substring)
+      </code>
+        </pre>
+        <p>str — вихідний рядок, у якому ми шукаємо підрядок;</p>
+        <p>substring — підрядок, який ми хочемо знайти у вихідному рядку.</p>
+        <pre>
+      <code>
+const username = 'Jacob Mercer';
+
+console.log(username.includes('Jacob')); // true
+console.log(username.includes('John')); // false
+console.log(username.includes('Mercer')); // true
+console.log(username.includes('Doe')); // false
+      </code>
+        </pre>
+        <p>
+          Регістр символів у рядку й підрядку має значення. Літера
+          <code>a</code>, наприклад, не дорівнює літері <code>A</code>.
+        </p>
+
+        <pre>
+      <code>
+function checkForName(fullName, firstName) {
+  // Приводимо обидва рядки до нижнього регістру
+  const normalizedFullName = fullName.toLowerCase();
+  const normalizedFirstName = firstName.toLowerCase();
+  
+  // Перевіряємо, чи входить firstName у fullName
+  return normalizedFullName.includes(normalizedFirstName);
+}
+
+console.log(checkForName("Jason Neis", "Jason")); // Повертає true
+console.log(checkForName("Jason Neis", "jAsOn")); // Повертає true
+console.log(checkForName("Jason Neis", "Jacob")); // Повертає false
+console.log(checkForName("Caty Stars", "Caty"));  // Повертає true
+console.log(checkForName("Caty Stars", "cAtY"));  // Повертає true
+console.log(checkForName("Caty Stars", "Andromeda")); // Повертає false
+      </code>
+        </pre>
+        <h3>Методи startsWith() і endsWith()</h3>
+        <p>
+          Методи <code>startsWith()</code> і <code>endsWith()</code> призначені
+          для перевірки початку й закінчення рядка відповідно. Вони повертають
+          булеве значення <code>true</code> або <code>false</code>, залежно від
+          того, чи відповідає початок або кінець рядка заданому значенню.
+        </p>
+
+        <pre>
+      <code>
+const str = "Hello, world!";
+
+console.log(str.startsWith("Hello")); // true
+console.log(str.startsWith("hello")); // false (метод чутливий до регістру)
+      </code>
+        </pre>
+
+        <pre>
+      <code>
+const str = "Hello, world!";
+
+console.log(str.endsWith("world!")); // true
+console.log(str.endsWith("World!")); // false (метод чутливий до регістру)
+      </code>
+        </pre>
+        <p>Функція checkFileExtension(fileName, ext) приймає два параметри:</p>
+
+        <p>
+          fileName - рядок, що зберігає ім'я файлу з розширенням, наприклад,
+          styles.css, hello.js тощо.
+        </p>
+        <p>ext - рядок, що зберігає розширення, наприклад, .css, .js тощо</p>
+        <p>Доповни код функції так, щоб:</p>
+
+        <p>
+          Якщо ім'я файлу fileName закінчується розширенням, зазначеним у
+          параметрі ext, то функція повертала рядок "File extension matches"
+        </p>
+        <p>
+          В іншому разі, функція повертала рядок "File extension does not match"
+        </p>
+        <pre>
+      <code>
+function checkFileExtension(fileName, ext) {
+  if (fileName.endsWith(ext)) {
+    return "File extension matches";
+  } else {
+    return "File extension does not match";
+  }
+}
+
+// Приклади виклику функції:
+console.log(checkFileExtension("styles.css", ".css")); // "File extension matches"
+console.log(checkFileExtension("styles.css", ".js")); // "File extension does not match"
+console.log(checkFileExtension("app.js", ".js")); // "File extension matches"
+console.log(checkFileExtension("app.js", ".html")); // "File extension does not match"
+console.log(checkFileExtension("index.html", ".html")); // "File extension matches"
+console.log(checkFileExtension("index.html", ".css")); // "File extension does not match"
+console.log(checkFileExtension("index.html", ".js")); // "File extension does not match"
+      </code>
+        </pre>
+        <h3>Метод indexOf()</h3>
+        <p>
+          Метод indexOf() використовується для пошуку першого входження підрядка
+          в рядок. Він повертає:
+        </p>
+        <p>
+          індекс першого входження (індекс першого символу) підрядка, якщо він
+          знайдений
+        </p>
+        <p>або -1, якщо підрядок не виявлено</p>
+        <pre>
+      <code>
+const message = "Welcome to Bahamas!";
+const index = message.indexOf("to");
+console.log(index); // 8
+      </code>
+        </pre>
+        <pre>
+        <code>
+const message = "Welcome to Bahamas!";
+const index = message.indexOf("hello");
+console.log(index); // -1
+      </code>
+        </pre>
+        <p>Функція getFileName(file) приймає один параметр</p>
+
+        <p>file - рядок з іменем файлу.</p>
+        <p>
+          Ім'я файлу може бути з розширенням, наприклад: styles.css, app.js або
+          без, наприклад: styles, app.
+        </p>
+        <p>
+          Використовуючи методи indexOf та slice, доповни код функції таким
+          чином, щоб:
+        </p>
+
+        <p>
+          Вона перевіряла наявність розширення в імені файлу (назва розширення
+          відокремлюється від імені файла крапкою)
+        </p>
+        <p>
+          Якщо ім'я файлу не містить розширення, то функція повертала новий
+          підрядок, що містить ім'я файлу без змін
+        </p>
+        <p>
+          В іншому разі функція повертала підрядок з іменем файлу, але без
+          розширення
+        </p>
+        <pre>
+      <code>
+function getFileName(file) {
+  const dotIndex = file.indexOf('.'); // Знаходимо позицію першої крапки в імені файлу
+  
+  if (dotIndex === -1) {
+    return file; // Якщо крапки немає, повертаємо ім'я файлу без змін
+  } else {
+    return file.slice(0, dotIndex); // Якщо крапка є, повертаємо частину рядка до крапки
+  }
+}
+
+// Приклади виклику функції:
+console.log(getFileName("styles.css")); // "styles"
+console.log(getFileName("app.js")); // "app"
+console.log(getFileName("app")); // "app"
+console.log(getFileName("index.js")); // "index"
+console.log(getFileName("index.html")); // "index"
+console.log(getFileName("index.css")); // "index"
+console.log(getFileName("index")); // "index"
+      </code>
+        </pre>
+        <h3>Метод trim()</h3>
+        <p>
+          Метод trim() використовується для видалення початкових і кінцевих
+          пробілів із рядка.
+        </p>
+        <pre>
+      <code>
+const input = " JavaScript is awesome!    ";
+const trimmedInput = input.trim();
+console.log(trimmedInput); // "JavaScript is awesome!"
+console.log(input); // " JavaScript is awesome! 
+      </code>
+        </pre>
+        <p>Функція createFileName(name, ext) приймає два параметри:</p>
+
+        <p>
+          name - рядок, що зберігає ім'я файлу без розширення, яке вводить
+          користувач. Воно може містити зайві пробіли на початку або в кінці
+          рядка, наприклад "order ", " finance " тощо
+        </p>
+        <p>ext - рядок, що зберігає розширення, наприклад "txt", "xml" тощо</p>
+        <p>
+          Використовуючи синтаксис шаблонних рядків і метод trim(), доповни код
+          функції таким чином, щоб вона повертала повне (об'єднане) ім'я файлу з
+          доданим розширенням, зазначеним у параметрі ext у форматі
+          ім'я.розширення.
+        </p>
+        <p>
+          Також повне ім'я файлу не повинно містити зайвих пробілів на початку
+          або наприкінці.
+        </p>
+        <pre>
+      <code>
+function createFileName(name, ext) {
+  return `${name.trim()}.${ext}`;
+}
+
+// Приклади виклику функції:
+console.log(createFileName(" order ", "txt")); // "order.txt"
+console.log(createFileName("report ", "csv")); // "report.csv"
+console.log(createFileName(" presentation", "xml")); // "presentation.xml"
+      </code>
+        </pre>
       </div>
     </section>
     <script src="js/jsgo.js"></script>

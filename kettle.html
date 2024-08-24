@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/jsgo.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1>Підручник JavaScript</h1>
+
+        <h2>Часто використовувані атрибути подій елементів HTML</h2>
+        <ul>
+          <li>
+            <code><dfn>onload (навантаження)</dfn></code> - oкончание загрузки
+            страниц
+          </li>
+          <li>
+            <code><dfn>onfocus (на фокусі)</dfn></code> - получение элементом
+            фокуса ввода (например, при активизации текстового поля)
+          </li>
+          <li>
+            <code><dfn>onblur (розмиття)</dfn></code> - потеря элементом фокуса
+            ввода (например, в результате выполнения пользователем щелчка в
+            другом текстовом поле)
+          </li>
+          <li>
+            <code><dfn>onchange (на зміну)</dfn></code> - изменение значения
+            элемента
+          </li>
+          <li>
+            <code><dfn>onselect (вибрати)</dfn></code> - выделение текста
+          </li>
+          <li>
+            <code><dfn>onsubmit (відправити)</dfn></code> - отправка формы
+          </li>
+          <li>
+            <code><dfn>onkeydown (натиснута клавіша)</dfn></code> - нажатие
+            клавиши
+          </li>
+          <li>
+            <code><dfn>onkeypress (натискання клавіші)</dfn></code> - нажатие и
+            последующее отпускание клавиши
+          </li>
+          <li>
+            <code><dfn>onkeyup</dfn></code> - отпускание клавиши
+          </li>
+          <li>
+            <code><dfn>onclick</dfn></code> - щелчок мышью на элементе
+          </li>
+          <li>
+            <code><dfn>ondrag</dfn></code> - перетаскивание элемента
+          </li>
+          <li>
+            <code><dfn>ondrop</dfn></code> - вставка перетаскиваемого элемента
+          </li>
+          <li>
+            <code><dfn>onmouseover</dfn></code> - перемещение указателя мыши над
+            элементом
+          </li>
+        </ul>
+
+        <pre>
+            <code>
+&lt;button id="bigButton" onclick="alert('Hello world!');"&gt;Клікни тут&lt;/button&gt;
+            </code>
+        </pre>
+
+        <input type="text" oninput="alert('Input is active')" />
+
+        <button id="bigButton" onclick="alert('Hello world!');">
+          Клікни тут
+        </button>
+        <p>
+          Атрибути подій (onload, onfocus, onblur...) додаються безпосередньо до
+          HTML-елементів і визначають, яка JavaScript-функція повинна
+          виконуватися, коли подія відбувається.
+        </p>
+        <div></div>
+        <pre>
+            <code>
+window.onload = function() { alert('Page is loaded!'); };
+            </code>
+        </pre>
+      </div>
+    </section>
+
+    <script src="./js/kettle.js " type="module"></script>
+  </body>
+</html>
