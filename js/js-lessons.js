@@ -1,3 +1,369 @@
+function showMessage() {
+  let message = 'Привіт, я JavaScript!'; // локальна змінна
+
+  alert(message);
+}
+
+showMessage(); // Привіт, я JavaScript!
+
+// for (let i = 0; i < 3; ++i) {
+//   alert(`число ${i + 1}!`);
+// } // console.log('10' - 5);
+
+// function greet(name) {
+//   return `Welcome ${name}!`;
+// }
+
+// // Викликаємо функцію greet і виводимо результат у консоль
+// console.log(greet('Mango')); // "Welcome Mango!"
+
+// // Виводимо функцію greet у консоль, не викликаючи її
+// console.log(greet); // ƒ greet() {return `Welcome ${name}!`}
+
+// Перевірка логіна та пароля
+
+/* 
+let userName = prompt('Хто там?', '');
+
+if (userName === 'Admin') {
+  let pass = prompt('Пароль?', '');
+
+  if (pass === 'Господар') {
+    alert('Ласкаво просимо!');
+  } else if (pass === '' || pass === null) {
+    alert('Скасовано');
+  } else {
+    alert('Неправильний пароль');
+  }
+} else if (userName === '' || userName === null) {
+  alert('Скасовано');
+} else {
+  alert('Я вас не знаю');
+}
+  */
+
+//let age = 55;
+
+// if (age >= 14 && age <= 90) alert('ok!');
+// if (!(age < 14 || age > 90)) alert('Yes!');
+// else alert('No!');
+
+// ('use strict');
+// const bookShelf = {
+//   books: ['The Last Kingdom', 'The Mist'],
+//   getBooks() {
+//     console.log(this);
+//   },
+// };
+
+// bookShelf.getBooks(); // {books: ["The Last Kingdom", "The Mist"], getBooks: f}
+
+// js / js - lessons.js;
+// export function changeText() {
+//   let t1 = document.getElementById('t1');
+//   t1.textContent = 'New Text';
+// }
+
+// js / js - lessons.js;
+// function changeText() {
+//   let t1 = document.getElementById('t1');
+//   t1.textContent = 'New Text';
+// }
+
+// window.changeText = changeText;
+
+//  Заміна тексту параграфа при клікі на кнопку
+// function changeText() {
+//   let t1 = document.getElementById('t1');
+//   t1.textContent = 'New Text';
+// }
+
+// function changeText() {
+//   let t1 = document.getElementById('t1');
+//   t1.textContent = 'New Text';
+// }
+
+// let age = prompt('Вік?', 18);
+
+// let message =
+//   age < 3
+//     ? 'Привіт, крихітко!'
+//     : age < 18
+//     ? 'Вітаю!'
+//     : age < 100
+//     ? 'Моє шанування!'
+//     : 'Який незвичайний вік!';
+
+// alert(message);
+
+// let message =
+//   login == 'Працівник'
+//     ? 'Привіт'
+//     : login == 'Директор'
+//     ? 'Вітаю'
+//     : login == ''
+//     ? 'Немає логіну'
+//     : '';
+
+// let a = +prompt('Встав значення a', '');
+// let b = +prompt('Встав значення b', '');
+
+// let result = a + b < 4 ? 'Нижче' : 'Вище';
+
+// alert(result);
+
+// let numeric = prompt('Вставте чисто 1, 0 або  -1', '');
+
+// if (numeric > 0) {
+//   alert(1);
+// } else if (numeric < 0) {
+//   alert(-1);
+// } else {
+//   alert(0);
+// }
+
+// let company = prompt('Яка “офіційна” назва JavaScript?', '');
+
+// if (company == 'ECMAScript') {
+//   alert('Правильно!');
+// } else {
+//   alert('Ви не знаєте? ECMAScript!');
+// }
+
+// let age = prompt('Вік?', '');
+
+// let message;
+
+// if (age < 3) {
+//   message = 'Привіт, крихітко!';
+// } else if (age < 18) {
+//   message = 'Вітаю!';
+// } else if (age < 100) {
+// message = 'Моє шанування!';
+// } else {
+//   message = 'Який незвичайний вік!';
+// }
+
+// alert(message);
+
+// let age = prompt('Скільки вам років?', '');
+
+// // let accessAllowed = age > 18 ? true : false;
+
+// let accessAllowed = age > 18;
+
+// alert(accessAllowed);
+
+// let year = prompt(
+//   'В якому році була опублікована специфікація ECMAScript-2015?',
+//   ''
+// );
+
+// if (year == 2015) {
+//   alert('Ви здогадалися правильно!');
+// } else {
+//   alert('Як ви можете так помилятися?'); // будь-яке значення, окрім 2015
+// }
+
+// let year = prompt(
+//   'В якому році була опублікована специфікація ECMAScript-2015?',
+//   ''
+// );
+
+// if (year == 2015) {
+//   alert('Це правильно!');
+//   alert('Ви такий розумний!');
+// }
+
+// const propName = 'name';
+// const user = {
+//   age: 25,
+//   [propName]: 'Henry Sibola',
+// };
+
+// console.log(user.name); // "Henry Sibola"
+
+// const propName = 'name';
+// const user = {
+//   age: 25,
+// };
+
+// user[propName] = 'Henry Sibola';
+// console.log(user); // "Henry Sibola"
+
+// _________________________________________________________
+// function slugify(title) {
+//   return title.toLowerCase().split(' ').join('-');
+// }
+
+// alert(slugify('Arrays for beginners')); // Показує "arrays-for-beginners"
+// alert(slugify('English for developer')); // Показує "english-for-developer"
+// alert(slugify('Ten secrets of JavaScript')); // Показує "ten-secrets-of-javascript"
+// alert(slugify('How to become a JUNIOR developer in TWO WEEKS')); // Показує "how-to-become-a-junior-developer-in-two-weeks"
+
+// function slugify(title) {
+//   return title.toLowerCase().split(' ').join('-');
+// }
+
+// const title = prompt('Введіть заголовок для перетворення на slug:');
+// alert(slugify(title));
+
+// console.log(slugify('Arrays for beginners')); // "arrays-for-beginners"
+// console.log(slugify('English for developer')); // "english-for-developer"
+// console.log(slugify('Ten secrets of JavaScript')); // "ten-secrets-of-javascript"
+// console.log(slugify('How to become a JUNIOR developer in TWO WEEKS')); // "how-to-become-a-junior-developer-in-two-weeks"
+
+// const title = prompt('Введіть заголовок для перетворення на slug:');
+// alert(slugify(title));
+
+// const confirmation = confirm('Перетворити "Arrays for beginners" на slug?');
+// if (confirmation) {
+//   alert(slugify('Arrays for beginners')); // Показує "arrays-for-beginners"
+// } else {
+//   alert('Операцію скасовано.');
+// }
+
+// console.log(slugify('Arrays for beginners')); // "arrays-for-beginners"
+// console.log(slugify('English for developer')); // "english-for-developer"
+// console.log(slugify('Ten secrets of JavaScript')); // "ten-secrets-of-javascript"
+// console.log(slugify('How to become a JUNIOR developer in TWO WEEKS')); // "how-to-become-a-junior-developer-in-two-weeks"
+
+/*
+console.log(3 >= '2');
+console.log('3' >= '2');
+console.log(false == 0);
+console.log(false === 0);
+console.log(false === false);
+console.log(null === null);
+console.log('ваа' >= 'ббб');
+console.log('я' >= 'ббб');
+console.log('БББ' >= 'ааа');
+console.log('' && '1');
+console.log('1' || '');
+console.log(('1' && '2') || '3');
+console.log(('' && '2') || '3');
+console.log(('1' && '2') || '');
+console.log((0 && 1) || (2 && 3) || 4 || (5 && 6 && 7));
+console.log(3 >= 2 && 5 >= 4);
+*/
+
+// alert('Привіт!');
+// let myName = prompt('What is you name?');
+// let friendName = prompt('What is you friend`s name?');
+// let myAppleCount = +prompt('How many appels do I have?');
+// let friendAppleCount = +prompt('How many appels does my friend have?');
+// let totalCount = myAppleCount + friendAppleCount;
+// let answer = `Значить ${myName} і ${friendName} мають ${totalCount} яблук!`;
+// alert(answer);
+
+// alert('Привіт!');
+// let myName = prompt('What is you name?');
+// let friendName = prompt('What is you friend`s name?');
+// let myAppleCount = prompt('How many appels do I have?');
+// let friendAppleCount = prompt('How many appels does my friend have?');
+// let totalCount = Number(myAppleCount) + Number(friendAppleCount);
+// let answer =
+//   'Значить ' + myName + ' і ' + friendName + ' мають ' + totalCount + ' яблук!';
+// alert(answer);
+// console.log(answer);
+
+// let a = 'string999';
+// console.log(a);
+
+// const myName = 'Edward';
+// const friendName = 'Alex';
+// let myNamberApples = 4;
+// let friendNamberApples = 6;
+// const howManyAppelsI = 'How many appels do I have?';
+// const howManyAppelsFriend = 'How many appels does my friend have?';
+
+// alert('Hello!');
+// prompt('What is your neme?');
+// prompt('What is your friend`s neme?');
+// prompt(howManyAppelsI);
+// prompt(howManyAppelsFriend);
+// alert('So, Edward and Alex have ten appels.');
+
+// prompt, alert, confirm
+
+// alert(typeof '');
+// alert(typeof 0);
+// alert(typeof 123);
+// alert(typeof '123');
+// alert(typeof typeof 777);
+// alert(typeof hull);
+
+// let typeTest = null;
+// alert(typeof typeTest);
+
+// console.log(typeof NaN);
+
+// function multiply() {
+//   let total = 1;
+
+//   for (const arg of arguments) {
+//     total *= arg;
+//   }
+
+//   return total;
+// }
+
+// console.log(multiply(1, 2, 3)); //  6
+// console.log(multiply(1, 2, 3, 4)); //  24
+// console.log(multiply(1, 2, 3, 4, 5)); //  120
+
+// function sum(a, b) {
+//   console.log(arguments);
+//   return a + b;
+// }
+
+// sum(2, 5);
+
+// -------------------------------
+
+// const planets = ['Earth', 'Mars', 'Venus'];
+
+// for (const planet of planets) {
+//   console.log(planet);
+// }
+
+// const productName = 'Droid';
+// const pricePerItem = 3500;
+
+// // Change code below this line
+// const message = `You picked ${productName}, price per item is ${pricePerItem} credits`;
+
+// console.log(message);
+
+// function getEvenNumbers(start, end) {
+//   const evenNumbers = [];
+
+//   for (let i = start; i <= end; i += 1) {
+//     if (i % 2 === 0) {
+//       evenNumbers.push(i);
+//     }
+//   }
+
+//   return evenNumbers;
+// }
+
+// console.log(getEvenNumbers(7, 7));
+// console.log(getEvenNumbers(3, 11));
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+
+//   return total;
+// }
+
+// let c = calculateTotalPrice([12, 85, 37, 4]);
+// c = calculateTotalPrice([12, 85, 37, 4]);
+// console.log(c);
+
 // const plus = 1 + 1;
 // console.log(plus);
 // const number = 3.1;
@@ -58,7 +424,7 @@
 // console.log(array);
 
 // методи в js
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // метод .join перетворює масив на рядок, також можимо щось вставляти між елементами масиву
 // console.log(array.join('; hi '));
@@ -136,8 +502,8 @@ const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // }
 
 // тернарний оператор ternary operator
-let road = 'up';
-let weather = 'sun';
+// let road = 'up';
+// let weather = 'sun';
 
 // let turn = road === 'left' ? 'road to left' : 'bad road ';
 // console.log(turn);
@@ -194,7 +560,7 @@ let weather = 'sun';
 // console.log(human.age);
 // console.log(human);
 
-let person = {
-  name: 'Edward',
-  age: 55,
-};
+// let person = {
+//   name: 'Edward',
+//   age: 55,
+// };

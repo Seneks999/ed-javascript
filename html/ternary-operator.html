@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/ternary-operator.js" defer></script>
+    <link rel="stylesheet" href="../css/jsgo.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="container">
+      <p id="plus1"></p>
+      <p><code>умова ? вираз_якщо_істина : вираз_якщо_хибність;</code></p>
+      <p id="score1"></p>
+
+      <pre><code>
+        // prompt для введення значення score
+const score = parseInt(prompt('Введіть свій бал: '), 10);
+
+// confirm для підтвердження введених даних
+const isConfirmed = confirm(`Ви ввели: ${score}. Підтвердити?`);
+
+if (isConfirmed) {
+  // Використовуємо тернарний оператор для визначення результату
+  const result =
+    score >= 90
+      ? 'Excellent'
+      : score >= 75
+      ? 'Good'
+      : score >= 50
+      ? 'Pass'
+      : 'Fail';
+
+  // alert для виведення результату
+  alert(`Ваш результат: ${result}`);
+
+  // Виведення результату в елемент з id="score1"
+  document.getElementById('score1').textContent = result;
+
+  // Виведення результату в консоль
+  console.log(result); // Виводимо результат, якщо користувач підтвердив введення
+} else {
+  alert('Введення даних було скасовано.');
+  console.log('Користувач скасував введення даних.'); // Виводимо повідомлення в разі скасування
+}
+
+      </code></pre>
+      <pre>
+      <code>
+// ------------------------------------------------------
+// prompt для введення значення score
+const score = parseInt(prompt('Введіть свій бал: '), '');
+
+// confirm для підтвердження введених даних
+const isConfirmed = confirm(`Ви ввели: ${score}. Підтвердити?`);
+
+console.log(isConfirmed);
+
+if (isConfirmed) {
+  let result;
+
+  // Умови для визначення результату
+  if (score >= 90) {
+    result = 'Excellent';
+  } else if (score >= 75) {
+    result = 'Good';
+  } else if (score >= 50) {
+    result = 'Pass';
+  } else {
+    result = 'Fail';
+  }
+
+  // alert для виведення результату
+  alert(`Ваш результат: ${result}`);
+
+  // Виведення результату в елемент з id="score1"
+  document.getElementById('score1').textContent = result;
+
+  // Виведення результату в консоль
+  console.log(result); // Виводимо результат, якщо користувач підтвердив введення
+} else {
+  alert('Введення даних було скасовано.');
+  console.log('Користувач скасував введення даних.'); // Виводимо повідомлення в разі скасування
+}
+
+// -----------------------------------------------------------
+      </code>
+    </pre>
+    </section>
+  </body>
+</html>

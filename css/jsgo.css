@@ -7,9 +7,9 @@ a {
   text-decoration: none;
 }
 
-ul {
+/* ul {
   list-style-type: none;
-}
+} */
 
 img {
   display: block;
@@ -18,6 +18,8 @@ img {
 }
 
 code {
+  font-family: 'Courier New';
+  font-weight: 700;
   font-size: 20px;
   color: green;
 }
