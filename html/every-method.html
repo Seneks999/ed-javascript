@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="../js/every-method.js" defer></script>
+    <link rel="stylesheet" href="../css/jsgo.css" />
+
+    <title>Every method</title>
+  </head>
+  <body>
+    <section class="container">
+      <h1>The every method</h1>
+      <p id="hasEveryProduct_id"></p>
+
+      <pre><code>
+const products = [
+	{ name: "apple", quantity: 2 },
+	{ name: "orange", quantity: 5 },
+	{ name: "plum", quantity: 0 },
+];
+
+const hasEveryProduct = products.every(product => product.quantity > 0);
+console.log(hasEveryProduct); // false
+      </code></pre>
+
+      <h4>Масив об'єктів products</h4>
+      <p>
+        Це масив, який містить три об'єкти. Кожен об'єкт має дві властивості:
+      </p>
+      <ul>
+        <li><dfn>name</dfn> — назва продукту (наприклад, "apple").</li>
+        <li>
+          <dfn>quantity</dfn> — кількість продукту (наприклад, 2 для яблук, 5
+          для апельсинів, 0 для слив).
+        </li>
+      </ul>
+      <h4>Метод .every()</h4>
+      <p>
+        Метод <code>.every()</code> перевіряє, чи всі елементи масиву
+        відповідають певній умові. Він приймає колбек-функцію і повертає
+        <code>true</code>, якщо кожен елемент масиву задовольняє умову, або
+        <code>false</code>, якщо хоча б один елемент не відповідає умові.
+      </p>
+      <p>
+        Колбек-функція — це функція, яку передають в іншу функцію як аргумент. У
+        нашому випадку, метод .every() вимагає, щоб йому передали функцію, яка
+        буде виконана для кожного елемента масиву.
+      </p>
+      <p>
+        Ось ця частина <code>product => product.quantity > 0</code> і є
+        колбек-функцією. Вона передається як аргумент методу .every().
+      </p>
+
+      <p>
+        У данному випадку: для кожного продукту (об'єкта) у масиві products ми
+        перевіряємо, чи кількість (quantity) більша за 0.
+      </p>
+      <pre><code>
+const hasEveryProduct = products.every(function(product) {
+	return product.quantity > 0;
+});
+      </code></pre>
+      <p>
+        hasEveryProduct буде false, оскільки не всі продукти мають кількість,
+        більшу за 0.
+      </p>
+      <p>
+        Еквівалентна функція зі звичайним використанням return виглядала б так:
+      </p>
+      <pre><code>
+function(product) {
+	return product.quantity > 0;
+}
+      </code></pre>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre><code>
+    Об'єкт window є глобальним об'єктом у браузері, який представляє вікно браузера або вкладку. Усі глобальні змінні, функції або інші об'єкти, створені в JavaScript, автоматично стають властивостями об'єкта window. Це стосується як власних властивостей і методів браузера, так і додаткових бібліотек, які підключаються через CDN або інші джерела.
+    
+    Деякі приклади властивостей і методів об'єкта window:
+    
+    window.document – об'єкт document, який представляє HTML-сторінку і дозволяє маніпулювати її елементами.
+    
+    javascript
+    Копіювати код
+    console.log(window.document); // Виведе HTML-документ у консолі.
+    window.alert() – метод, який показує спливаюче вікно з повідомленням.
+    
+    javascript
+    Копіювати код
+    window.alert("Hello, world!");
+    window.localStorage – властивість, яка дозволяє зберігати дані в локальному сховищі браузера.
+    
+    javascript
+    Копіювати код
+    window.localStorage.setItem('key', 'value');
+    console.log(window.localStorage.getItem('key')); // Виведе "value"
+    window.navigator – властивість, яка містить інформацію про браузер і операційну систему користувача.
+    
+    javascript
+    Копіювати код
+    console.log(window.navigator.userAgent); // Виведе рядок з інформацією про браузер.
+    window.location – об'єкт, який містить інформацію про поточний URL і дозволяє змінювати його.
+    
+    javascript
+    Копіювати код
+    console.log(window.location.href); // Виведе поточну URL сторінки.
+    window.location.href = "https://example.com"; // Перейде на іншу сторінку.
+    Коли ти підключаєш бібліотеку через CDN, наприклад, jQuery, вона додає свою власну властивість до об'єкта window. У випадку jQuery, це буде:
+    
+    javascript
+    Копіювати код
+    console.log(window.jQuery); // Виведе функцію jQuery, якщо бібліотека підключена.
+    Таким чином, об'єкт window слугує глобальним контекстом для всіх змінних і функцій, доступних у браузері.
+    
+</code></pre>
+  </body>
+</html>
